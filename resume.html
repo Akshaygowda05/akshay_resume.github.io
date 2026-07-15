@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay S | Portfolio & Resume</title>
+    <!-- Modern, clean typography alternative for screens -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            /* Main Navy Blue Brand Color */
+            --primary-light: #f7fafc;
+            /* Background Tint */
+            --text-dark: #1a202c;
+            /* High contrast charcoal text */
+            --text-muted: #4a5568;
+            /* Subtitles and body copy */
+            --border-color: #e2e8f0;
+            /* Fine UI panel lines */
+            --max-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Hosted Web View Wrapper */
+        .web-resume-wrapper {
+            width: 100%;
+            max-width: var(--max-width);
+            background: #ffffff;
+            border-top: 8px solid var(--primary-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+        }
+
+        /* Top Header Navigation Block */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact-grid span,
+        .contact-grid a {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-grid a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-grid a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        /* Interactive Section Setup */
+        section {
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            margin-left: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .summary-box {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        /* Modernized Interactive Pill Badges for Web Skills */
+        .skills-web-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .skill-badge {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Work Experience Layout */
+        .timeline-item {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border-color: #cbd5e1;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .role-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .company-info {
+            font-size: 14.5px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .date-location {
+            text-align: right;
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .date-badge {
+            background-color: #edf2f7;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        ul.details-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.details-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        ul.details-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        /* Cards for Education and Links */
+        .info-card {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .edu-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .web-links-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .portfolio-link-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .portfolio-link-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .portfolio-link-card .platform-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .portfolio-link-card .url-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .web-resume-wrapper {
+                padding: 25px 20px;
+            }
+
+            .date-location {
+                text-align: left;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .web-links-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Absolute Print Fallback Engine */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+
+            .web-resume-wrapper {
+                box-shadow: none;
+                padding: 0;
+                border: none;
+                max-width: 100%;
+            }
+
+            .skill-badge {
+                border: 1px solid #000 !important;
+                background: transparent !important;
+                color: #000 !important;
+                padding: 2px 6px !important;
+                font-size: 11px !important;
+            }
+
+            .timeline-item {
+                border: none !important;
+                padding: 10px 0 !important;
+                page-break-inside: avoid;
+            }
+
+            .portfolio-link-card {
+                border: none !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="web-resume-wrapper">
+
+        <!-- Interactive Header -->
+        <header>
+            <h1>Akshay S</h1>
+            <div class="contact-grid">
+                <span>📍 Bengaluru, Karnataka 560105</span>
+                <span>📞 +91 9986772811</span>
+                <a href="mailto:akshay2002gowda@gmail.com">✉️ akshay2002gowda@gmail.com</a>
+            </div>
+        </header>
+
+        <!-- Summary Section -->
+        <section>
+            <div class="section-heading">Summary</div>
+            <div class="summary-box">
+                Backend Engineer with over 2 years of experience in developing scalable IoT, SCADA, and Fleet Management
+                platforms using Node.js, PostgreSQL, and Docker[cite: 1]. Expertise in real-time telemetry systems,
+                microservices, and AI-driven automation with LangChain and Ollama[cite: 1]. Committed to advancing
+                distributed systems and backend architecture while enhancing skills in Rust[cite: 1].
+            </div>
+        </section>
+
+        <!-- Dynamic Web Badges for Skills -->
+        <section>
+            <div class="section-heading">Skills & Technologies</div>
+            <div class="skills-web-grid">
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">JavaScript (ES6+)</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">Microservices</span>
+                <span class="skill-badge">API Design</span>
+                <span class="skill-badge">Auth & RBAC</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">Prisma ORM</span>
+                <span class="skill-badge">Redis</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">Embedded Programming</span>
+                <span class="skill-badge">Linux</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">LangChain</span>
+                <span class="skill-badge">Ollama</span>
+                <span class="skill-badge">NLP</span>
+                <span class="skill-badge">IoT Protocols</span>
+                <span class="skill-badge">Wireless Communication</span>
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section>
+            <div class="section-heading">Experience</div>
+
+            <!-- Job Entry 1 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="role-title">Junior Engineer</div>
+                        <div class="company-info">Aegeus Technologies</div>
+                    </div>
+                    <div class="date-location">
+                        <span class="date-badge">Nov 2025 - Present</span><br>
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+                <ul class="details-list">
+                    <li>Engineered real-time telemetry pipelines with ChirpStack and MQTT for monitoring and controlling
+                        LoRaWAN-based solar panel cleaning robots, achieving sub-second command delivery[cite: 1].</li>
+                    <li>Architected and scaled an in-house IoT Fleet Management & SCADA platform to replace a
+                        third-party solution, successfully reducing operational costs by 80–90%[cite: 1].</li>
+                    <li>Optimized distributed backend systems to enhance reliability, scalability, and uptime across
+                        multiple high-availability production deployments[cite: 1].</li>
+                    <li>Integrated LLM capabilities by developing an AI-powered chatbot using LangChain and Ollama,
+                        enabling users to manage robot scheduling and retrieve operational insights through natural
+                        language[cite: 1].</li>
+                </ul>
+            </div>
+
+            <!-- Job Entry 2 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="role-title">Graduate Trainee</div>
+                        <div class="company-info">Aegeus Technologies</div>
+                    </div>
+                    <div class="date-location">
+                        <span class="date-badge">Nov 2024 - Nov 2025</span><br>
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+                <ul class="details-list">
+                    <li>Developed high-performance REST APIs to support real-time robot monitoring dashboards and
+                        facilitate daily fleet operations[cite: 1].</li>
+                    <li>Designed and implemented microservices for core business operations, enabling automated cleaning
+                        report generation and secure, role-based access control (RBAC) for improved data security[cite:
+                        1].</li>
+                    <li>Optimized database performance using PostgreSQL, Prisma ORM, and Redis caching, enhancing query
+                        efficiency for high-throughput telemetry and battery health logs[cite: 1].</li>
+                    <li>Containerized application architectures with Docker, streamlining local development environments
+                        and establishing reliable CI/CD production workflows[cite: 1].</li>
+                </ul>
+            </div>
+
+            <!-- Job Entry 3 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="role-title">Intern</div>
+                        <div class="company-info">Aegeus Technologies</div>
+                    </div>
+                    <div class="date-location">
+                        <span class="date-badge">Jun 2024 - Nov 2024</span><br>
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+                <ul class="details-list">
+                    <li>Programmed embedded firmware in C for custom robot controller PCBs, interfacing directly with
+                        hardware components[cite: 1].</li>
+                    <li>Designed and implemented an anti-stall recovery algorithm using encoder feedback to detect
+                        physical obstructions, triggering an automated back-and-forth routine to free stuck
+                        hardware[cite: 1].</li>
+                    <li>Developed backend API routes using Node.js and Express.js to connect edge hardware with cloud
+                        dashboards[cite: 1].</li>
+                    <li>Created React-based user interfaces for monitoring robot health status and telemetry logs,
+                        enhancing user accessibility to critical data[cite: 1].</li>
+                </ul>
+            </div>
+
+            <!-- Job Entry 4 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="role-title">Engineering Intern</div>
+                        <div class="company-info">Bharat Electronics Limited (BEL)</div>
+                    </div>
+                    <div class="date-location">
+                        <span class="date-badge">Jan 2024 - Mar 2024</span><br>
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+                <ul class="details-list">
+                    <li>Studied core enterprise networking concepts, including TCP/IP, UDP, routing, and secure
+                        communication protocols, enhancing knowledge applicable to defense electronics[cite: 1].</li>
+                    <li>Analyzed client-server architectures to establish a solid foundation in reliable packet
+                        communication for high-security embedded and enterprise environments[cite: 1].</li>
+                    <li>Assisted engineers in designing and developing electronic systems[cite: 1].</li>
+                    <li>Conducted testing and validation of components for reliability and performance[cite: 1].</li>
+                    <li>Collaborated with cross-functional teams to resolve technical issues[cite: 1].</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Box -->
+        <section>
+            <div class="section-heading">Education</div>
+            <div class="info-card">
+                <div class="edu-flex">
+                    <div>
+                        <strong>Electronics and Communication Engineering</strong><br>
+                        <span style="color: var(--text-muted); font-size: 14px;">Sri Sairam College of Engineering,
+                            Bengaluru, India</span>
+                    </div>
+                    <div style="text-align: right; font-size: 13.5px; color: var(--text-muted);">
+                        <strong>Graduated: 05/2024</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clickable External Web Targets -->
+        <section>
+            <div class="section-heading">Websites, Portfolios & Profiles</div>
+            <div class="web-links-container">
+                <a href="https://www.linkedin.com/in/akshay-gowda-999420344" target="_blank"
+                    class="portfolio-link-card">
+                    <span class="platform-title">LinkedIn Profile ↗</span>
+                    <span class="url-text">linkedin.com/in/akshay-gowda-999420344</span>
+                </a>
+                <a href="https://github.com/Akshaygowda05" target="_blank" class="portfolio-link-card">
+                    <span class="platform-title">GitHub Portfolio ↗</span>
+                    <span class="url-text">github.com/Akshaygowda05</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Key Engineering Accomplishments -->
+        <section style="margin-bottom: 0;">
+            <div class="section-heading">Key Accomplishments</div>
+            <ul class="details-list" style="padding-top: 5px;">
+                <li><strong>Cost Efficiency:</strong> Cut operational overhead by 80–90% by transitioning from a
+                    third-party vendor platform to an internally developed IoT SCADA solution[cite: 1].</li>
+                <li><strong>AI Implementation:</strong> Successfully built and deployed a local LLM stack using
+                    LangChain and Ollama to simplify complex operational scheduling via natural language text[cite: 1].
+                </li>
+                <li><strong>Full-Stack Versatility:</strong> Maintained software across the entire product lifecycle,
+                    including hardware-level embedded C, backend microservices, database tuning, and UI
+                    visualization[cite: 1].</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
